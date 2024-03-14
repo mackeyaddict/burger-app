@@ -91,8 +91,9 @@ export default function Order() {
   if(isDone) return (
     <section>
       <div className=" h-screen mx-auto justify-center items-center flex">
-        <div className="container mx-auto flex flex-col gap-6 justify-center items-center">
-          <h1 className="text-4xl font-bold text-green-600">Your order has been received!</h1>
+        <div className="container mx-auto flex flex-col gap-6 justify-center items-center text-center">
+          <h1 className="text-6xl font-bold text-green-600">Thank You!</h1>
+          <h2 className="text-4xl font-bold text-green-600">Your order has been received!</h2>
           <div className="max-w-80 w-full flex justify-between">
             <Link to="/order">
               <Button>Order again?</Button>
@@ -110,7 +111,7 @@ export default function Order() {
     <section>
       <Navbar/>
       <OrderHeader ingredients={ingredients} selectedIngredients={selectedIngredients} onReset={() => setSelectedIngredients([])} />
-      <div className="container h-[calc(100vh-242px)] mx-auto justify-evenly items-center flex">
+      <div className="container h-[calc(100vh-242px)] mx-auto justify-evenly items-center md:flex">
         <OrderDisplay selectedIngredients={selectedIngredients} removeIngredient={(idx) => manageIngredients("remove", undefined, idx)} />
         <IngredientsPicker ingredients={ingredients} manageIngredients={(id) => manageIngredients("add", id)} isReachMax={isReachMax} />
       </div>
