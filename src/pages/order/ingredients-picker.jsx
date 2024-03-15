@@ -11,8 +11,8 @@ export default function IngredientsPicker({ ingredients = [], manageIngredients,
           </div>
         ))}
       </div>
-      <div className="flex justify-center items-center pt-9">
-        {isReachMax && <h1 className="text-2xl">You reach the maximal quantity of ingredients</h1>}
+      <div className="flex justify-center items-center text-center pt-9">
+        {isReachMax && <h1 className="text-2xl">You&rsquo;ve reach the maximal quantity of ingredients</h1>}
       </div>
     </section>
   );

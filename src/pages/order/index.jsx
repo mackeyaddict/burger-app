@@ -6,6 +6,7 @@ import Navbar from "../../Components/Navbar";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Button from "../../Components/Button";
+import OrderDetails from "./order-details";
 
 const ingredients = [
   {
@@ -111,10 +112,11 @@ export default function Order() {
     <section>
       <Navbar/>
       <OrderHeader ingredients={ingredients} selectedIngredients={selectedIngredients} onReset={() => setSelectedIngredients([])} />
-      <div className="container h-[calc(100vh-242px)] mx-auto justify-evenly items-center md:flex">
+      <div className="container px-4 md:px-0 h-auto mx-auto justify-evenly items-center md:flex">
         <OrderDisplay selectedIngredients={selectedIngredients} removeIngredient={(idx) => manageIngredients("remove", undefined, idx)} />
         <IngredientsPicker ingredients={ingredients} manageIngredients={(id) => manageIngredients("add", id)} isReachMax={isReachMax} />
       </div>
+      <OrderDetails ingredients={ingredients} selectedIngredients={selectedIngredients}/>
     </section>
   );
 }

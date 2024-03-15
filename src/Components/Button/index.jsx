@@ -6,7 +6,7 @@ export default function Button({children, variant = 'primary', onClick, disabled
     disabled: "hidden",
   }
   return (
-    <button onClick={onClick} disabled={disabled} className={`p-4 rounded-lg w-full active:scale-[0.98] ${variants[variant]}`}>
+    <button onClick={onClick} disabled={disabled} className={`p-4 rounded-lg w-full hover:scale-[0.98] ${variants[variant]}`}>
       {children}
     </button>
   );

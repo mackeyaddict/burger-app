@@ -9,7 +9,7 @@ export default function OrderHeader({ ingredients = [], selectedIngredients = []
     const filterBySelectedIngredients = selectedIngredients.map(
       (id) => ingredients.find((item) => item?.id === id)?.price
     );
-    console.log(filterBySelectedIngredients);
+
     return `Rp${formatNumber(filterBySelectedIngredients.reduce((a, b) => a + b, 0))}`;
   };
 
@@ -18,7 +18,7 @@ export default function OrderHeader({ ingredients = [], selectedIngredients = []
       <div className="container mx-auto py-14 flex justify-evenly md:justify-between items-center">
         {!isEmptySelectedIngredients && (
           <div>
-            <h3 className="text-3xl font-bold">Total: {totalCost()}</h3>
+            <h3 className="text-xl md:text-3xl font-bold">Total: {totalCost()}</h3>
           </div>
         )}
         <div className="flex items-center gap-4 ">
